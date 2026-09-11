@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "category": "photos",
+    "file": "encrypted/0001.enc",
+    "captionEnc": "ES+/K/PRMy+thtWO9yC0h1xkqvHoCDEvl0qBHa4WbeoTKxdK56L7JCSbH/8+XyiIQbUEcsM=",
+    "mime": "image/jpeg"
+  },
+  {
+    "id": 2,
+    "category": "photos",
+    "file": "encrypted/0002.enc",
+    "captionEnc": "/mEdN7FVoVirtFt3sl4Eoh6QW1STaM3EuCrGbpRkWn9kPSOkmYBKnpy7h0HgcQhLBrMH3OU=",
+    "mime": "image/jpeg"
+  },
+  {
+    "id": 3,
+    "category": "photos",
+    "file": "encrypted/0003.enc",
+    "captionEnc": "LE8CT1FLhw96dJqHQV0Mr44tFBFH19/E/yCRkZkATi0knp+cnsb7rb4B3hNMMpMIa1CWrYleSHZ2ux7LG6Inc8Pxyijac0zaYh0DOn6C8JfOD7cPQAkFcBMHAzqMroteRAoRCFSL",
+    "mime": "text/plain"
+  },
+  {
+    "id": 4,
+    "category": "videos",
+    "file": "encrypted/0004.enc",
+    "captionEnc": "3kqxLgjtOKyt8lOs5DHrzxEkQMqQQLRr1epT1Nij/QG6YK9i/wBOgtKYcTiP6yQyBUV4FpuGJ259g21TX3teq3eBCMY5I5s8AtRirCWLuwnlpV0Ymke76TAdAD8/C0gpfeNA6jlp",
+    "mime": "text/plain"
+  },
+  {
+    "id": 5,
+    "category": "songs",
+    "file": "encrypted/0005.enc",
+    "captionEnc": "se6vSAiGAgCPy1k3ZI6pC7/6zk+vxOav0YSEpChC/jDwAXdrphaT/69+90n3D7D0UnY=",
+    "mime": "audio/mpeg"
+  },
+  {
+    "id": 6,
+    "category": "songs",
+    "file": "encrypted/0006.enc",
+    "captionEnc": "icRmyve3ESoOwmPIjC2kUth58ysLVtSwvzpsR6FmRcojpQT/11duN5zL8RCdSFm8g4wgQr4HUoGTNHVxMw==",
+    "mime": "audio/mpeg"
+  },
+  {
+    "id": 7,
+    "category": "songs",
+    "file": "encrypted/0007.enc",
+    "captionEnc": "YcUuIfwuBKlAj92XrqchUrA7DTrs7Ec84fcOesvtPknHK2J1adPI08alNScFZP/Q1q1iTh672lkvapdqn1shTp8gjDPraD+GLhW2QXU9M3oEOXxePpQWS48lB9+oUf+zsaPlCZbj",
+    "mime": "text/plain"
+  },
+  {
+    "id": 8,
+    "category": "voices",
+    "file": "encrypted/0008.enc",
+    "captionEnc": "U48Z9egUQZ7ATmsMk0lVefA+wi37LIX7HaVIzNxRpK3F++4L1VeaoYqObkhRMPCbBzTIcXjYBkHmRcREVou0eCrMBjCf5Q1bV4YHjtf4iKPqSywGI/4uK/xWRNjQjLMuAzHIhwch",
+    "mime": "text/plain"
+  },
+  {
+    "id": 9,
+    "category": "letter",
+    "file": "encrypted/0009.enc",
+    "captionEnc": "Ezakp3w4/LunIz1ALhkBAcnG3gwB/L9nWZpYwe7T",
+    "mime": "application/octet-stream"
+  },
+  {
+    "id": 10,
+    "category": "letter",
+    "file": "encrypted/0010.enc",
+    "captionEnc": "oqaLcC08CR0sCyNO9qbN9wrP41U+5c7hoNkthaMe3t9yjLqLaF4m9QtJR1inNA+ltFze7G2jWazdSIrJ/1PPYVJ58woFvndgIDVVaqw65oMdrngmdYrxL5Oy6ih/3M+nxgvG8uZf",
+    "mime": "text/plain"
+  }
+]
