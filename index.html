@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
   <title>برای تو</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap');
@@ -14,10 +13,8 @@
       --card: #2e253d;
       --text: #f3ebe0;
       --text-dim: #c4b8a8;
-      --accent: #d4a574;          /* طلایی پاییزی */
-      --accent-2: #c47a5a;        /* نارنجی سوخته */
-      --pink-soft: #e8b4b8;       /* صورتی ملایم برای هایلایت */
-      --error: #e8a0a0;
+      --accent: #d4a574;
+      --accent-2: #c47a5a;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,10 +23,8 @@
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* ========== صفحه قفل ========== */
     #lockScreen {
       position: fixed;
       inset: 0;
@@ -39,257 +34,182 @@
       justify-content: center;
       background: radial-gradient(ellipse at center, #2a1f3d 0%, #1a1423 70%);
       z-index: 100;
-      transition: opacity 1.2s ease, transform 1.2s ease;
+      transition: opacity 1s ease;
     }
     #lockScreen.hide {
       opacity: 0;
-      transform: scale(1.05);
       pointer-events: none;
     }
 
     .stars {
       position: absolute;
       inset: 0;
-            pointer-events: none;
+      pointer-events: none; /* این خط خیلی مهمه */
       background-image: 
         radial-gradient(1.5px 1.5px at 20px 30px, #fff, transparent),
         radial-gradient(1.5px 1.5px at 40px 70px, rgba(255,255,255,0.8), transparent),
         radial-gradient(1px 1px at 90px 40px, #fff, transparent),
         radial-gradient(1.5px 1.5px at 160px 120px, rgba(255,255,255,0.9), transparent),
         radial-gradient(1px 1px at 230px 80px, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 300px 150px, rgba(255,255,255,0.7), transparent),
-        radial-gradient(1px 1px at 370px 60px, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 450px 180px, #fff, transparent);
-      background-size: 500px 300px;
-      animation: twinkle 8s ease-in-out infinite alternate;
-      opacity: 0.7;
+        radial-gradient(1.5px 1.5px at 300px 150px, rgba(255,255,255,0.7), transparent);
+      background-size: 400px 300px;
+      opacity: 0.6;
+      animation: twinkle 7s ease-in-out infinite alternate;
     }
     @keyframes twinkle {
-      from { opacity: 0.5; }
-      to { opacity: 0.9; }
+      from { opacity: 0.4; }
+      to { opacity: 0.75; }
     }
 
     .moon {
-      font-size: 64px;
-      margin-bottom: 20px;
+      font-size: 62px;
+      margin-bottom: 18px;
       animation: float 5s ease-in-out infinite;
-      filter: drop-shadow(0 0 20px rgba(212, 165, 116, 0.4));
+      z-index: 2;
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+      50% { transform: translateY(-10px); }
     }
 
     .lock-title {
       font-size: 22px;
-      font-weight: 500;
       color: var(--accent);
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      z-index: 2;
     }
+
     .lock-poem {
       font-size: 15px;
       color: var(--text-dim);
       line-height: 1.9;
-      max-width: 320px;
       text-align: center;
-      margin-bottom: 32px;
-      min-height: 60px;
-    }
-    .lock-poem .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      background: var(--accent);
-      margin-right: 2px;
-      animation: blink 1s step-end infinite;
-    }
-    @keyframes blink {
-      50% { opacity: 0; }
+      max-width: 300px;
+      margin-bottom: 30px;
+      min-height: 55px;
+      z-index: 2;
     }
 
     #pw {
-      width: 260px;
-      padding: 14px 18px;
+      width: 250px;
+      padding: 14px 16px;
       border-radius: 14px;
       border: 1px solid #3d3450;
-      background: rgba(36, 28, 49, 0.8);
+      background: #241c31;
       color: var(--text);
       font-size: 16px;
       text-align: center;
       outline: none;
-      transition: border-color 0.25s;
+      z-index: 5;
+      position: relative;
     }
     #pw:focus { border-color: var(--accent); }
 
     #unlockBtn {
-      margin-top: 16px;
-      padding: 12px 36px;
+      margin-top: 14px;
+      padding: 12px 34px;
       border-radius: 999px;
       border: none;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: linear-gradient(135deg, #d4a574, #c47a5a);
       color: #1a1423;
       font-size: 15px;
       font-weight: 600;
       cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    #unlockBtn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(212, 165, 116, 0.3);
-    }
-    #err {
-      color: var(--error);
-      font-size: 13px;
-      margin-top: 14px;
-      min-height: 20px;
+      z-index: 5;
+      position: relative;
     }
 
-    /* ========== محتوای اصلی ========== */
+    #err {
+      color: #e8a0a0;
+      font-size: 13px;
+      margin-top: 12px;
+      min-height: 18px;
+      z-index: 5;
+    }
+
+    /* محتوای اصلی */
     #contentScreen {
       display: none;
-      max-width: 720px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 40px 20px 80px;
-      animation: fadeUp 1s ease;
+      padding: 40px 20px 60px;
     }
     #contentScreen.show { display: block; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     .header {
       text-align: center;
-      margin-bottom: 36px;
+      margin-bottom: 30px;
     }
-    .header .emoji { font-size: 36px; margin-bottom: 10px; }
     .header h1 {
       font-size: 24px;
-      font-weight: 500;
       color: var(--accent);
       margin-bottom: 6px;
     }
-    .header p {
-      color: var(--text-dim);
-      font-size: 14px;
-    }
+    .header p { color: var(--text-dim); font-size: 14px; }
 
-    /* تب‌ها */
     .tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       justify-content: center;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
     .tab {
-      padding: 9px 18px;
+      padding: 9px 16px;
       border-radius: 999px;
       background: var(--bg-soft);
       color: var(--text-dim);
       font-size: 13px;
       cursor: pointer;
-      border: 1px solid transparent;
-      transition: all 0.25s;
     }
-    .tab:hover { color: var(--text); }
     .tab.active {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: linear-gradient(135deg, #d4a574, #c47a5a);
       color: #1a1423;
       font-weight: 600;
     }
 
     .panel { display: none; }
-    .panel.active { display: block; animation: fadeUp 0.5s ease; }
+    .panel.active { display: block; }
 
-    /* کارت‌ها */
     .card {
       background: var(--card);
-      border-radius: 16px;
-      padding: 18px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(212, 165, 116, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
     }
     .card img {
       width: 100%;
-      border-radius: 12px;
-      display: block;
-      margin-bottom: 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
-    .card .meta {
+    .meta {
       font-size: 13px;
       color: var(--text-dim);
       line-height: 1.7;
     }
-    .card .meta span {
-      color: var(--accent);
-    }
-    .card .text {
-      font-size: 15px;
-      line-height: 1.9;
-      color: var(--text);
-    }
-
-    .empty {
-      text-align: center;
-      color: var(--text-dim);
-      padding: 40px 20px;
-      font-size: 14px;
-    }
-
-    /* موسیقی */
-    #bgMusic {
-      display: none;
-    }
-    .music-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(26, 20, 35, 0.95);
-      backdrop-filter: blur(12px);
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      border-top: 1px solid rgba(212, 165, 116, 0.15);
-      font-size: 13px;
-      color: var(--text-dim);
-      z-index: 50;
-    }
-    .music-bar button {
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 18px;
-      cursor: pointer;
-    }
+    .meta span { color: var(--accent); }
   </style>
 </head>
 <body>
 
-  <!-- صفحه قفل -->
   <div id="lockScreen">
     <div class="stars"></div>
     <div class="moon">🌙</div>
     <div class="lock-title">برای تو</div>
     <div class="lock-poem" id="poem"></div>
+
     <input type="password" id="pw" placeholder="رمز ورود" autocomplete="off" />
     <button id="unlockBtn">باز کن</button>
     <div id="err"></div>
   </div>
 
-  <!-- محتوای اصلی -->
   <div id="contentScreen">
     <div class="header">
-      <div class="emoji">🍂</div>
       <h1>تولدت مبارک</h1>
       <p>یه گوشه از دل من برات</p>
     </div>
 
-    <div class="tabs" id="tabs">
+    <div class="tabs">
       <div class="tab active" data-tab="beauty">زیبایی‌ها</div>
       <div class="tab" data-tab="quotes">جملات قصار</div>
       <div class="tab" data-tab="memories">خاطرات</div>
@@ -297,120 +217,73 @@
       <div class="tab" data-tab="us">ما</div>
     </div>
 
-    <!-- زیبایی‌ها -->
     <div class="panel active" id="panel-beauty">
       <div class="card">
-        <img src="https://picsum.photos/600/400?random=1" alt="">
+        <img src="https://picsum.photos/600/400?random=11" alt="">
         <div class="meta">
           <div><span>تاریخ:</span> ۱۲ شهریور ۱۴۰۳</div>
-          <div><span>مکان:</span> کافه نزدیک خونه</div>
+          <div><span>مکان:</span> کافه</div>
           <div><span>فرستنده:</span> من</div>
         </div>
       </div>
-      <div class="card">
-        <img src="https://picsum.photos/600/400?random=2" alt="">
-        <div class="meta">
-          <div><span>تاریخ:</span> ۳ مهر ۱۴۰۳</div>
-          <div><span>مکان:</span> پارک</div>
-          <div><span>فرستنده:</span> سارا</div>
-        </div>
-      </div>
     </div>
 
-    <!-- جملات قصار -->
     <div class="panel" id="panel-quotes">
-      <div class="card">
-        <div class="text">
-          «دوست داشتن از نگاه کردن آغاز می‌شود، اما با نگاه کردن ادامه نمی‌یابد.»
-        </div>
-      </div>
-      <div class="card">
-        <div class="text">
-          اینجا می‌تونی جملات قصار و شعرهای مورد علاقه‌ت رو بذاری.
-        </div>
-      </div>
+      <div class="card">اینجا جملات قصار می‌آید...</div>
     </div>
-
-    <!-- خاطرات -->
     <div class="panel" id="panel-memories">
-      <div class="empty">به‌زودی خاطرات اینجا می‌آن...</div>
+      <div class="card">خاطرات به‌زودی...</div>
     </div>
-
-    <!-- همراهان -->
     <div class="panel" id="panel-friends">
-      <div class="card">
-        <div class="text">
-          <strong>سارا:</strong><br>
-          تولدت مبارک دوست خوبم، امیدوارم همیشه بخندی.
-        </div>
-      </div>
+      <div class="card">حرف‌های دوستان...</div>
     </div>
-
-    <!-- ما -->
     <div class="panel" id="panel-us">
-      <div class="empty">این بخش مال خودمونه...</div>
+      <div class="card">بخش ما...</div>
     </div>
   </div>
-
-  <!-- نوار موسیقی -->
-  <div class="music-bar" id="musicBar" style="display:none;">
-    <button id="playPause">▶</button>
-    <span id="trackName">در انتظار آهنگ...</span>
-  </div>
-
-  <!-- پلیر مخفی -->
-  <audio id="bgMusic"></audio>
 
   <script>
-    // ========== شعر با افکت تایپ ==========
+    // شعر
     const poemText = `در این شبِ پاییزی
 ستاره‌ها به یاد تو روشن‌اند`;
     const poemEl = document.getElementById('poem');
-    let i = 0;
-    function typePoem() {
-      if (i < poemText.length) {
-        poemEl.innerHTML = poemText.slice(0, i + 1) + '<span class="cursor"></span>';
-        i++;
-        setTimeout(typePoem, 70);
-      } else {
-        poemEl.innerHTML = poemText;
+    let idx = 0;
+    function type() {
+      if (idx <= poemText.length) {
+        poemEl.textContent = poemText.slice(0, idx);
+        idx++;
+        setTimeout(type, 65);
       }
     }
-    setTimeout(typePoem, 600);
+    setTimeout(type, 500);
 
-    // ========== باز کردن سایت ==========
-    const lockScreen = document.getElementById('lockScreen');
-    const contentScreen = document.getElementById('contentScreen');
-    const pwInput = document.getElementById('pw');
-    const unlockBtn = document.getElementById('unlockBtn');
-    const errBox = document.getElementById('err');
-    const musicBar = document.getElementById('musicBar');
-
-    // فعلاً رمز ساده برای تست (بعداً عوض می‌کنیم)
+    // رمز
     const CORRECT_PASSWORD = "test123";
 
-    function unlock() {
-      const pass = pwInput.value.trim();
-      if (pass !== CORRECT_PASSWORD) {
-        errBox.textContent = 'رمز درست نیست';
-        return;
+    const lockScreen = document.getElementById('lockScreen');
+    const contentScreen = document.getElementById('contentScreen');
+    const pw = document.getElementById('pw');
+    const btn = document.getElementById('unlockBtn');
+    const err = document.getElementById('err');
+
+    function tryUnlock() {
+      if (pw.value.trim() === CORRECT_PASSWORD) {
+        lockScreen.classList.add('hide');
+        setTimeout(() => {
+          lockScreen.style.display = 'none';
+          contentScreen.classList.add('show');
+        }, 900);
+      } else {
+        err.textContent = 'رمز درست نیست';
       }
-      errBox.textContent = '';
-      lockScreen.classList.add('hide');
-      setTimeout(() => {
-        lockScreen.style.display = 'none';
-        contentScreen.classList.add('show');
-        musicBar.style.display = 'flex';
-        // اینجا بعداً موسیقی شروع می‌شه
-      }, 1200);
     }
 
-    unlockBtn.addEventListener('click', unlock);
-    pwInput.addEventListener('keydown', e => {
-      if (e.key === 'Enter') unlock();
+    btn.addEventListener('click', tryUnlock);
+    pw.addEventListener('keydown', e => {
+      if (e.key === 'Enter') tryUnlock();
     });
 
-    // ========== تب‌ها ==========
+    // تب‌ها
     document.querySelectorAll('.tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -419,9 +292,6 @@
         document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
       });
     });
-
-    // ========== موسیقی (آماده برای بعد) ==========
-    // بعداً لیست آهنگ‌ها رو اینجا اضافه می‌کنیم
   </script>
 </body>
 </html>
